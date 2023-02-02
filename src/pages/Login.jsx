@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { LOGIN_USER } from '../redux/actions';
+import { saveEmail } from '../redux/actions';
 
 class Login extends React.Component {
   state = {
@@ -42,7 +42,7 @@ class Login extends React.Component {
   saveUser = () => {
     const { email } = this.state;
     const { dispatch, history: { push } } = this.props;
-    dispatch({ type: LOGIN_USER, payload: { email } });
+    dispatch(saveEmail(email));
     push('/carteira');
   };
 
