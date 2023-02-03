@@ -13,3 +13,10 @@ export const saveCurrencies = (currencies) => ({
   type: CURRENCIES,
   payload: { currencies },
 });
+
+// action responsável por salvar as despesas
+export const ADD_EXPENSE = 'ADD_EXPENSE';
+export const addExpense = (expense) => ({
+  type: ADD_EXPENSE,
+  payload: { expense },
+});
