@@ -20,3 +20,10 @@ export const addExpense = (expense) => ({
   type: ADD_EXPENSE,
   payload: { expense },
 });
+
+// action responsável por deletar as despesas
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const deleteExpense = (expenseId) => ({
+  type: DELETE_EXPENSE,
+  payload: { expenseId },
+});

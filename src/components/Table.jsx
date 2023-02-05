@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { TableCard } from './TableCard';
+import TableCard from './TableCard';
 
 /**
  * @class - Responsável por renderizar as 'categorias' da tabela de despesas
