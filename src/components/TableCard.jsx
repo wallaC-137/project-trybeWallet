@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteExpense } from '../redux/actions';
+import { deleteExpense, editExpense } from '../redux/actions';
 
 /**
  * @class - Responsável por renderizar as 'linhas' da tabela de despesas
@@ -13,6 +13,14 @@ class TableCard extends Component {
   deleteExpense = () => {
     const { dispatch, id } = this.props;
     dispatch(deleteExpense(id));
+  };
+
+  /**
+   * @method - Responsável por realizar o dispatch do Id para editar a despesa
+   */
+  editExpense = () => {
+    const { dispatch, id } = this.props;
+    dispatch(editExpense(id));
   };
 
   render() {
@@ -28,7 +36,14 @@ class TableCard extends Component {
         <td>{(exchangeRates[currency].ask * value).toFixed(2)}</td>
         <td>Real</td>
         <td>
-          <button type="button">Editar</button>
+          <button
+            type="button"
+            data-testid="edit-btn"
+            onClick={ () => this.editExpense(id) }
+          >
+            Editar
+
+          </button>
           <button
             type="button"
             data-testid="delete-btn"
