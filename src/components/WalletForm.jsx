@@ -62,7 +62,7 @@ class WalletForm extends Component {
     const id = expenses.length;
 
     const newExpense = {
-      id: editor ? idSaved : id, // confere se é editor é true, se for, usa o id salvo
+      id: editor ? idSaved : id + 1, // confere se é editor é true, se for, usa o id salvo
       value,
       currency,
       method,
